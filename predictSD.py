@@ -35,9 +35,11 @@ def stand_d_sr(bot_or_evo, drive_on, speed):
 def stand_d_poly(bot_or_evo, drive_on, speed):
   if (bot_or_evo == 1):
     if (drive_on == 1):
-      return bot_poly_y1_model.predict(np.array([[speed]]))
+      poly_obj= PolynomialFeatures(degree=3)
+      return bot_poly_y1_model.predict(poly_obj.fit_transform(np.array([[speed]])))
     elif (drive_on == 2):
-      return bot_poly_y2_model.predict(np.array([[speed]]))
+      poly_obj= PolynomialFeatures(degree=7)
+      return bot_poly_y2_model.predict(poly_obj.fit_transform(np.array([[speed]])))
     else:
       return -1
   if (bot_or_evo == 2):
@@ -72,9 +74,9 @@ print("What is the speed of the Robot?")
 speed = input()
 speed = float(speed)
 
-#res = stand_d_poly(bot_or_evo, drive_on, speed)
-res = stand_d_sr(bot_or_evo, drive_on, speed)
+res = stand_d_poly(bot_or_evo, drive_on, speed)
+#res = stand_d_sr(bot_or_evo, drive_on, speed)
 if res == -1:
   print("Can not predict for this combination")
 else:
-  print("The predicted standard devitation is ", res)
+  print("The predicted standard devitation is", res[0])
