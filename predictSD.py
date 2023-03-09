@@ -3,7 +3,11 @@ import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
 
-
+##
+# Author: sohanjs111
+#
+#
+##
 
 # Read the models
 bot_sr_y1_model = joblib.load("./Models/bot_sr_y1.sav")
@@ -101,18 +105,17 @@ def robot_speed():
   return speed
 
 if __name__ == "__main__":
-
+  # robot
   robot_no = -1
   while(robot_no == -1):
     robot_no = which_robot()
-
+  # Surface
   surface_no = -1
   while(surface_no == -1):
     surface_no = surface_on(robot_no)
-
+  # Speed
   speed = robot_speed()
-
-
+  # model
   res_poly = stand_d_poly(robot_no, surface_no, speed)
   res_lr = stand_d_sr(robot_no, surface_no, speed)
   if res_poly == -1 or res_lr == -1:
