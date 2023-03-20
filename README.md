@@ -14,3 +14,5 @@ pip3 install numpy
 ```
 pip3 install joblib
 ```
+
+The Regression models were built using Juypter Notebook, while the prediction is done using only python 3.
