@@ -25,6 +25,10 @@ The repository contains The dataset the model that was trained with and the mode
 11. evo_ml.sav - Multiple Linear regression model for Evocortex for different Friction coefficient
 
 ## To run the program:
+### Run the file
+```
+python3 predictSD.py
+```
 ### Install the necessary packages to run predictSD.py
 1. Scikit library to the model
 ```
@@ -41,9 +45,6 @@ pip3 install joblib
 
 The Regression models were built using Juypter Notebook, while the prediction is done using only python 3.
 
-### Run the file
-```
-python3 predictSD.py
-```
+
 
 
